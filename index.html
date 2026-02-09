@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Archivos - Subir Archivo</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- JSZip for compression -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Sistema de Carga de Archivos</h1>
+            <p>Sube tus documentos de forma segura y comprimida.</p>
+        </header>
+
+        <main>
+            <form id="uploadForm">
+                <div class="form-group">
+                    <label for="uploaderName">Nombre del Usuario</label>
+                    <input type="text" id="uploaderName" name="uploaderName" required placeholder="Ingresa tu nombre completo">
+                </div>
+
+                <div class="form-group">
+                    <label for="fileInput">Seleccionar Archivo</label>
+                    <input type="file" id="fileInput" name="fileInput" accept=".xls,.xlsx,.doc,.docx,.pdf,.jpg,.jpeg,.png" required>
+                    <small>Formatos permitidos: Excel, Word, PDF, JPG, PNG</small>
+                </div>
+
+                <button type="submit" id="uploadBtn">Subir Archivo</button>
+            </form>
+            
+            <div id="messageArea" class="message-area"></div>
+            <div id="loadingIndicator" class="hidden">
+                <div class="spinner"></div>
+                <p>Comprimiendo y subiendo archivo...</p>
+            </div>
+        </main>
+
+        <footer>
+            <a href="admin.html" class="admin-link">Ir al Panel de Administración</a>
+        </footer>
+    </div>
+
+    <!-- Main Logic -->
+    <script type="module" src="assets/js/app.js"></script>
+</body>
+</html>
